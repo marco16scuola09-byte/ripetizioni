@@ -1,6 +1,10 @@
 /* =========================================================
-   RESET
+   RIPETIZIONI — DESIGN PREMIUM
    ========================================================= */
+
+/* =========================
+   RESET
+   ========================= */
 
 * {
     margin: 0;
@@ -10,28 +14,26 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 90px;
+    scroll-padding-top: 85px;
 }
 
 body {
     font-family:
         Inter,
-        ui-sans-serif,
-        system-ui,
         -apple-system,
         BlinkMacSystemFont,
         "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
         sans-serif;
 
-    background: #f6f8fc;
+    background: #f7f9fc;
     color: #172033;
-    line-height: 1.6;
-    overflow-x: hidden;
-}
 
-a {
-    color: inherit;
-    text-decoration: none;
+    line-height: 1.6;
+
+    overflow-x: hidden;
 }
 
 button,
@@ -41,6 +43,15 @@ textarea {
     font: inherit;
 }
 
+button {
+    border: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 
 /* =========================================================
    VARIABILI
@@ -48,56 +59,76 @@ textarea {
 
 :root {
     --blue: #2563eb;
-    --blue-dark: #173b9b;
-    --blue-deep: #0d1b3e;
-    --blue-light: #eaf1ff;
+    --blue-dark: #1d4ed8;
+    --blue-deep: #0b1735;
+    --blue-soft: #edf4ff;
 
     --text: #172033;
-    --text-soft: #64748b;
+    --text-soft: #667085;
+    --text-light: #98a2b3;
 
     --white: #ffffff;
 
-    --border: #e5eaf2;
-    --background: #f6f8fc;
+    --border: #e7ebf2;
 
     --green: #16a36a;
 
-    --radius: 24px;
+    --shadow-sm:
+        0 8px 25px rgba(15, 23, 42, 0.06);
 
     --shadow:
-        0 20px 60px rgba(23, 32, 51, 0.08);
+        0 20px 60px rgba(15, 23, 42, 0.08);
 
-    --shadow-small:
-        0 10px 30px rgba(23, 32, 51, 0.07);
+    --shadow-lg:
+        0 30px 90px rgba(15, 23, 42, 0.12);
+
+    --radius: 24px;
 }
 
 
 /* =========================================================
-   HEADER
+   HEADER / HERO
    ========================================================= */
 
 header {
     position: relative;
+
+    min-height: 560px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 100px 25px 90px;
+
     overflow: hidden;
 
-    padding: 95px 20px 80px;
+    color: white;
+
+    text-align: center;
 
     background:
         radial-gradient(
-            circle at 80% 15%,
-            rgba(80, 130, 255, 0.28),
-            transparent 32%
+            circle at 78% 18%,
+            rgba(76, 128, 255, 0.40),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 15% 90%,
+            rgba(44, 91, 210, 0.28),
+            transparent 30%
         ),
         linear-gradient(
             135deg,
-            #0d1b3e 0%,
-            #10285d 52%,
-            #2563eb 100%
+            #09142f 0%,
+            #102b63 55%,
+            #2459d6 100%
         );
-
-    color: white;
-    text-align: center;
 }
+
+
+/* griglia decorativa */
 
 header::before {
     content: "";
@@ -107,12 +138,12 @@ header::before {
 
     background-image:
         linear-gradient(
-            rgba(255,255,255,0.035) 1px,
+            rgba(255,255,255,0.045) 1px,
             transparent 1px
         ),
         linear-gradient(
             90deg,
-            rgba(255,255,255,0.035) 1px,
+            rgba(255,255,255,0.045) 1px,
             transparent 1px
         );
 
@@ -122,38 +153,72 @@ header::before {
         linear-gradient(
             to bottom,
             black,
-            transparent
+            transparent 90%
         );
 
     pointer-events: none;
 }
 
+
+/* luce decorativa */
+
+header::after {
+    content: "";
+
+    position: absolute;
+
+    width: 380px;
+    height: 380px;
+
+    right: -170px;
+    bottom: -190px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    box-shadow:
+        0 0 0 60px rgba(255,255,255,0.018),
+        0 0 0 120px rgba(255,255,255,0.012);
+
+    pointer-events: none;
+}
+
+
 header h1 {
     position: relative;
-    z-index: 1;
+    z-index: 2;
 
-    font-size: clamp(55px, 10vw, 100px);
-    line-height: 0.95;
+    font-size: clamp(62px, 11vw, 120px);
 
-    letter-spacing: -0.065em;
+    line-height: 0.9;
+
+    letter-spacing: -0.075em;
 
     font-weight: 900;
+
+    text-shadow:
+        0 15px 50px rgba(0,0,0,0.18);
 }
+
 
 .sottotitolo {
     position: relative;
-    z-index: 1;
+    z-index: 2;
 
-    max-width: 650px;
+    width: min(650px, 100%);
 
-    margin: 24px auto 0;
+    margin: 28px auto 0;
 
-    color: #c7d4ed;
+    color: #cbd8ef;
 
     font-size: clamp(17px, 2vw, 21px);
-    line-height: 1.6;
+
+    line-height: 1.65;
 
     text-align: center;
+
+    letter-spacing: 0.01em;
 }
 
 
@@ -166,39 +231,41 @@ nav {
     top: 0;
     z-index: 1000;
 
+    min-height: 70px;
+
     display: flex;
     align-items: center;
     justify-content: center;
 
-    gap: 34px;
+    gap: 36px;
 
-    min-height: 68px;
+    padding: 12px 20px;
 
-    padding: 10px 20px;
+    background: rgba(255,255,255,0.90);
 
-    background: rgba(255, 255, 255, 0.90);
+    border-bottom: 1px solid rgba(226,232,240,0.85);
+
+    box-shadow:
+        0 8px 30px rgba(15,23,42,0.045);
 
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
-
-    border-bottom: 1px solid rgba(229, 234, 242, 0.9);
-
-    box-shadow:
-        0 8px 30px rgba(23, 32, 51, 0.04);
 }
+
 
 nav a {
     position: relative;
 
     color: #64748b;
 
-    font-size: 14px;
-    font-weight: 700;
+    font-size: 13px;
+    font-weight: 750;
 
     transition:
         color 0.2s ease,
         transform 0.2s ease;
 }
+
 
 nav a::after {
     content: "";
@@ -213,17 +280,20 @@ nav a::after {
 
     background: var(--blue);
 
-    transform: translateX(-50%);
+    border-radius: 10px;
 
-    border-radius: 999px;
+    transform: translateX(-50%);
 
     transition: width 0.2s ease;
 }
 
+
 nav a:hover {
     color: var(--blue);
+
     transform: translateY(-1px);
 }
+
 
 nav a:hover::after {
     width: 100%;
@@ -231,7 +301,7 @@ nav a:hover::after {
 
 
 /* =========================================================
-   MAIN
+   SEZIONI
    ========================================================= */
 
 main {
@@ -239,40 +309,37 @@ main {
 }
 
 
-/* =========================================================
-   SEZIONI GENERALI
-   ========================================================= */
-
 section {
-    width: min(1180px, calc(100% - 40px));
+    width: min(1120px, calc(100% - 40px));
 
-    margin: 0 auto 28px;
+    margin: 0 auto;
 
-    padding: 90px 0;
+    padding: 95px 0;
 }
 
-section h2 {
-    margin-bottom: 22px;
 
+section h2 {
     color: var(--blue-deep);
 
-    font-size: clamp(38px, 5vw, 58px);
+    font-size: clamp(40px, 5vw, 58px);
 
-    line-height: 1.03;
+    line-height: 1.02;
 
-    letter-spacing: -0.045em;
+    letter-spacing: -0.055em;
 
     text-align: center;
 }
 
-section > p {
-    max-width: 700px;
 
-    margin: 0 auto 28px;
+section > p {
+    max-width: 680px;
+
+    margin: 20px auto 0;
 
     color: var(--text-soft);
 
     font-size: 16px;
+
     line-height: 1.75;
 
     text-align: center;
@@ -286,27 +353,27 @@ section > p {
 #cosa-faccio {
     position: relative;
 
-    width: min(1100px, calc(100% - 40px));
+    width: min(1080px, calc(100% - 40px));
 
-    margin-top: 50px;
+    margin-top: 55px;
 
-    padding: 90px 50px;
+    padding: 90px 45px;
 
     overflow: hidden;
 
     background:
         radial-gradient(
-            circle at 90% 0%,
-            rgba(37, 99, 235, 0.14),
-            transparent 30%
+            circle at 100% 0%,
+            rgba(37,99,235,0.13),
+            transparent 32%
         ),
         linear-gradient(
             135deg,
             #ffffff,
-            #f1f5ff
+            #f1f6ff
         );
 
-    border: 1px solid #e0e8f7;
+    border: 1px solid #dfe8f7;
 
     border-radius: 32px;
 
@@ -315,23 +382,25 @@ section > p {
     text-align: center;
 }
 
+
 #cosa-faccio::before {
     content: "";
 
     position: absolute;
 
-    width: 230px;
-    height: 230px;
+    width: 260px;
+    height: 260px;
 
-    left: -100px;
-    bottom: -120px;
-
-    background: #e4edff;
+    left: -150px;
+    bottom: -160px;
 
     border-radius: 50%;
 
+    background: #e8f0ff;
+
     pointer-events: none;
 }
+
 
 #cosa-faccio h2,
 #cosa-faccio p,
@@ -340,48 +409,60 @@ section > p {
     z-index: 1;
 }
 
+
 #cosa-faccio h2 {
-    font-size: clamp(42px, 6vw, 70px);
+    max-width: 800px;
+
+    margin: 0 auto;
+
+    font-size: clamp(43px, 6vw, 70px);
 }
+
 
 #cosa-faccio p {
     max-width: 620px;
 
+    margin-top: 22px;
+
     font-size: 18px;
 }
 
+
 #cosa-faccio a {
     display: inline-flex;
+
     align-items: center;
     justify-content: center;
 
     min-height: 52px;
 
-    margin-top: 10px;
+    margin-top: 30px;
 
-    padding: 0 24px;
+    padding: 0 25px;
 
     background: var(--blue);
+
     color: white;
 
     border-radius: 13px;
 
-    font-size: 14px;
-    font-weight: 800;
+    font-size: 13px;
+    font-weight: 850;
 
     box-shadow:
-        0 12px 28px rgba(37, 99, 235, 0.22);
+        0 12px 28px rgba(37,99,235,0.24);
 
     transition:
         transform 0.2s ease,
         box-shadow 0.2s ease;
 }
 
+
 #cosa-faccio a:hover {
     transform: translateY(-3px);
 
     box-shadow:
-        0 17px 35px rgba(37, 99, 235, 0.28);
+        0 18px 35px rgba(37,99,235,0.30);
 }
 
 
@@ -393,9 +474,11 @@ section > p {
     padding-top: 105px;
 }
 
+
 #materie h2 {
     margin-bottom: 50px;
 }
+
 
 .cards {
     display: grid;
@@ -406,12 +489,13 @@ section > p {
     gap: 20px;
 }
 
+
 .card {
     position: relative;
 
-    min-height: 240px;
+    min-height: 230px;
 
-    padding: 32px;
+    padding: 31px;
 
     overflow: hidden;
 
@@ -419,9 +503,9 @@ section > p {
 
     border: 1px solid var(--border);
 
-    border-radius: 24px;
+    border-radius: 23px;
 
-    box-shadow: var(--shadow-small);
+    box-shadow: var(--shadow-sm);
 
     transition:
         transform 0.25s ease,
@@ -429,52 +513,84 @@ section > p {
         border-color 0.25s ease;
 }
 
-.card::after {
+
+/* decorazione */
+
+.card::before {
     content: "";
 
     position: absolute;
 
-    width: 150px;
-    height: 150px;
+    width: 130px;
+    height: 130px;
 
-    right: -70px;
-    bottom: -70px;
+    right: -55px;
+    bottom: -60px;
 
-    background: var(--blue-light);
+    background: var(--blue-soft);
 
     border-radius: 50%;
 
     transition: transform 0.3s ease;
 }
 
+
+.card::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 4px;
+    height: 0;
+
+    background: var(--blue);
+
+    border-radius: 0 0 5px 0;
+
+    transition: height 0.3s ease;
+}
+
+
 .card:hover {
     transform: translateY(-8px);
 
-    border-color: #c9d8f8;
+    border-color: #d2def3;
 
     box-shadow:
-        0 25px 55px rgba(23, 32, 51, 0.11);
+        0 25px 55px rgba(15,23,42,0.10);
 }
 
-.card:hover::after {
+
+.card:hover::before {
     transform: scale(1.35);
 }
+
+
+.card:hover::after {
+    height: 65px;
+}
+
 
 .card h3,
 .card p {
     position: relative;
-    z-index: 1;
+    z-index: 2;
 }
 
+
 .card h3 {
-    margin-bottom: 13px;
+    margin-bottom: 12px;
 
     color: var(--blue-deep);
 
-    font-size: 22px;
+    font-size: 21px;
 
     letter-spacing: -0.025em;
 }
+
 
 .card p {
     max-width: 290px;
@@ -482,7 +598,59 @@ section > p {
     color: var(--text-soft);
 
     font-size: 14px;
-    line-height: 1.7;
+
+    line-height: 1.75;
+}
+
+
+/* piccole icone automatiche */
+
+.card h3::before {
+    display: block;
+
+    width: 45px;
+    height: 45px;
+
+    margin-bottom: 22px;
+
+    padding-top: 8px;
+
+    background: var(--blue-soft);
+
+    border-radius: 13px;
+
+    color: var(--blue);
+
+    font-size: 21px;
+
+    text-align: center;
+}
+
+
+/* icone per materia */
+
+.card:nth-child(1) h3::before {
+    content: "∑";
+}
+
+.card:nth-child(2) h3::before {
+    content: "A";
+}
+
+.card:nth-child(3) h3::before {
+    content: "⚗";
+}
+
+.card:nth-child(4) h3::before {
+    content: "◷";
+}
+
+.card:nth-child(5) h3::before {
+    content: "φ";
+}
+
+.card:nth-child(6) h3::before {
+    content: "F";
 }
 
 
@@ -491,40 +659,47 @@ section > p {
    ========================================================= */
 
 #come-funziona {
-    padding-top: 110px;
+    padding-top: 105px;
 
     text-align: center;
 }
 
+
 #come-funziona h2 {
-    margin-bottom: 60px;
+    margin-bottom: 65px;
 }
+
 
 .passaggi {
     position: relative;
 }
+
 
 .passaggi::before {
     content: "";
 
     position: absolute;
 
-    top: 32px;
-    left: 16.5%;
-    right: 16.5%;
+    top: 33px;
+
+    left: 17%;
+    right: 17%;
 
     height: 2px;
 
     background:
         linear-gradient(
             90deg,
-            #dbe5f5,
-            #a9c0ed,
-            #dbe5f5
+            transparent,
+            #cbd9f1,
+            #9eb8e9,
+            #cbd9f1,
+            transparent
         );
 
     z-index: 0;
 }
+
 
 .passaggi ol {
     position: relative;
@@ -535,10 +710,11 @@ section > p {
     grid-template-columns:
         repeat(3, minmax(0, 1fr));
 
-    gap: 35px;
+    gap: 30px;
 
     list-style: none;
 }
+
 
 .passaggi li {
     display: flex;
@@ -547,25 +723,26 @@ section > p {
 
     color: var(--text);
 
-    font-size: 16px;
-    font-weight: 750;
+    font-size: 15px;
+    font-weight: 800;
 
     text-align: center;
 }
 
+
 .passaggi li span {
-    width: 66px;
-    height: 66px;
+    width: 67px;
+    height: 67px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    margin-bottom: 25px;
+    margin-bottom: 23px;
 
     background: var(--blue);
 
-    border: 7px solid #f6f8fc;
+    border: 7px solid #f7f9fc;
 
     border-radius: 50%;
 
@@ -575,45 +752,50 @@ section > p {
     font-weight: 900;
 
     box-shadow:
-        0 0 0 1px #d8e2f3,
+        0 0 0 1px #d5e0f1,
         0 10px 25px rgba(37,99,235,0.20);
 }
+
 
 .passaggi li::after {
     content: "";
 
-    display: block;
-
     width: 35px;
     height: 4px;
 
-    margin-top: 17px;
+    margin-top: 15px;
 
-    background: #eaf1ff;
+    background: #e5edfb;
 
     border-radius: 999px;
 }
 
 
 /* =========================================================
-   PRENOTAZIONE
+   PRENOTAZIONE — CONTENITORE
    ========================================================= */
 
 .prenotazione-layout {
+    width: min(1120px, calc(100% - 40px));
+
+    margin: 20px auto 80px;
+
     display: grid;
 
     grid-template-columns:
         minmax(0, 1fr)
         minmax(0, 1fr);
 
-    gap: 20px;
-
-    width: min(1180px, calc(100% - 40px));
-
-    margin: 30px auto 70px;
+    gap: 22px;
 }
 
-.prenotazione-layout section {
+
+/* =========================================================
+   CARD DISPONIBILITÀ
+   ========================================================= */
+
+#disponibilita,
+#richiedi-lezione {
     width: 100%;
 
     margin: 0;
@@ -626,43 +808,47 @@ section > p {
 
     border-radius: 26px;
 
-    box-shadow: var(--shadow-small);
+    box-shadow: var(--shadow);
+
+    text-align: left;
 }
 
-.prenotazione-layout section h2 {
-    margin-bottom: 10px;
+
+#disponibilita h2,
+#richiedi-lezione h2 {
+    margin: 0;
 
     font-size: clamp(30px, 4vw, 42px);
 
     text-align: left;
 }
 
-.prenotazione-layout section > p {
-    margin: 0 0 25px;
+
+#richiedi-lezione > p {
+    max-width: 100%;
+
+    margin: 13px 0 28px;
 
     text-align: left;
+
+    font-size: 14px;
 }
 
 
 /* =========================================================
-   CALENDARIO
+   MESE
    ========================================================= */
 
-#disponibilita {
-    overflow: hidden;
-}
-
-#disponibilita h2 {
-    text-align: left;
-}
-
 #meseAnno {
-    margin: 25px 0 22px;
+    margin: 28px 0 22px;
 
     color: var(--blue-deep);
 
-    font-size: 23px;
-    font-weight: 800;
+    font-size: 21px;
+
+    font-weight: 850;
+
+    line-height: 1.2;
 
     text-align: center;
 
@@ -670,15 +856,15 @@ section > p {
 }
 
 
+/* =========================================================
+   CALENDARIO
+   ========================================================= */
+
 /*
-   IMPORTANTE:
-
-   Il tuo JavaScript crea direttamente dentro #calendario:
-   - 7 div per Lun/Mar/Mer/Gio/Ven/Sab/Dom
-   - alcuni div vuoti
-   - i button dei giorni
-
-   Per questo usiamo una griglia direttamente su #calendario.
+   Il JavaScript crea direttamente dentro #calendario:
+   7 div con Lun/Mar/Mer/Gio/Ven/Sab/Dom
+   poi gli spazi vuoti
+   poi i button dei giorni.
 */
 
 #calendario {
@@ -691,66 +877,71 @@ section > p {
 
     width: 100%;
 
-    margin: 0 auto;
+    margin: 0;
 
-    padding: 5px 0;
+    padding: 4px 0;
 }
 
 
-/* Giorni della settimana */
+/* intestazioni Lun Mar Mer... */
 
 #calendario > div {
     width: 100%;
     min-width: 0;
 
-    height: 30px;
+    height: 28px;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
     color: #94a3b8;
 
-    font-size: 10px;
+    font-size: 9px;
+
     font-weight: 850;
 
-    text-transform: uppercase;
+    letter-spacing: 0.05em;
 
     text-align: center;
+
+    text-transform: uppercase;
 }
 
 
-/* Spazi vuoti prima del primo giorno */
+/* spazi vuoti */
 
 #calendario > div:empty {
     visibility: hidden;
 }
 
 
-/* Numeri del calendario */
+/* giorni */
 
 #calendario > button {
     width: 100%;
     min-width: 0;
 
-    height: 44px;
+    height: 43px;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
     padding: 0;
-    margin: 0;
 
-    background: #f8fbff;
+    background: #f8fafc;
 
-    border: 1px solid #dbe5f5;
+    border: 1px solid #e3e9f2;
 
-    border-radius: 12px;
+    border-radius: 11px;
 
     color: #334155;
 
-    font-size: 13px;
+    font-size: 12px;
+
     font-weight: 750;
 
     cursor: pointer;
@@ -758,38 +949,38 @@ section > p {
     outline: none;
 
     transition:
-        background 0.18s ease,
-        border-color 0.18s ease,
-        color 0.18s ease,
-        transform 0.18s ease,
-        box-shadow 0.18s ease;
+        transform 0.16s ease,
+        background 0.16s ease,
+        border-color 0.16s ease,
+        color 0.16s ease,
+        box-shadow 0.16s ease;
 }
 
 
-/* Giorni disponibili */
+/* hover */
 
 #calendario > button:not(:disabled):hover {
-    background: var(--blue-light);
+    transform: translateY(-2px);
+
+    background: #edf4ff;
 
     border-color: #9ebcf0;
 
     color: var(--blue);
 
-    transform: translateY(-2px);
-
     box-shadow:
-        0 7px 18px rgba(37, 99, 235, 0.12);
+        0 7px 17px rgba(37,99,235,0.12);
 }
 
 
-/* Giorni passati / weekend */
+/* disabilitati */
 
 #calendario > button:disabled {
-    background: #f5f7fa;
+    background: #f7f8fa;
 
-    border-color: #e8edf3;
+    border-color: #edf0f4;
 
-    color: #c5ccd7;
+    color: #c7ced9;
 
     cursor: not-allowed;
 
@@ -797,7 +988,7 @@ section > p {
 }
 
 
-/* Giorno selezionato */
+/* selezionato */
 
 #calendario > button.selezionato {
     background: var(--blue);
@@ -807,7 +998,7 @@ section > p {
     color: white;
 
     box-shadow:
-        0 8px 20px rgba(37, 99, 235, 0.28);
+        0 8px 19px rgba(37,99,235,0.28);
 
     transform: translateY(-1px);
 }
@@ -821,63 +1012,74 @@ section > p {
     display: grid;
 
     grid-template-columns:
-        repeat(2, minmax(0, 1fr));
+        repeat(4, minmax(0, 1fr));
 
-    gap: 9px;
+    gap: 8px;
 
-    margin-top: 28px;
+    margin-top: 26px;
 
-    padding-top: 24px;
+    padding-top: 22px;
 
     border-top: 1px solid var(--border);
 }
 
-#orari h3 {
+
+#orari::before {
+    content: "Scegli l'orario";
+
     grid-column: 1 / -1;
 
-    margin-bottom: 5px;
+    margin-bottom: 3px;
 
     color: var(--blue-deep);
 
-    font-size: 16px;
+    font-size: 12px;
 
-    text-align: left;
+    font-weight: 850;
+
+    letter-spacing: 0.04em;
 }
 
-#orari button {
-    min-height: 44px;
 
-    padding: 9px 12px;
+#orari button {
+    width: 100%;
+
+    min-height: 43px;
+
+    padding: 8px 5px;
 
     background: #f8fafc;
 
     border: 1px solid var(--border);
 
-    border-radius: 11px;
+    border-radius: 10px;
 
     color: #334155;
 
-    font-size: 12px;
+    font-size: 11px;
+
     font-weight: 800;
 
     cursor: pointer;
 
     transition:
-        background 0.18s ease,
-        border-color 0.18s ease,
-        color 0.18s ease,
-        transform 0.18s ease;
+        transform 0.16s ease,
+        background 0.16s ease,
+        border-color 0.16s ease,
+        color 0.16s ease;
 }
+
 
 #orari button:hover:not(:disabled) {
-    background: var(--blue-light);
+    transform: translateY(-2px);
 
-    border-color: #9ebcf0;
+    background: var(--blue-soft);
+
+    border-color: #a7c1ed;
 
     color: var(--blue);
-
-    transform: translateY(-2px);
 }
+
 
 #orari button.selezionato {
     background: var(--blue);
@@ -887,11 +1089,12 @@ section > p {
     color: white;
 
     box-shadow:
-        0 7px 18px rgba(37, 99, 235, 0.22);
+        0 7px 18px rgba(37,99,235,0.22);
 }
 
+
 #orari button:disabled {
-    background: #f8fafc;
+    background: #fafbfc;
 
     border-color: #edf0f4;
 
@@ -905,50 +1108,33 @@ section > p {
    FORM
    ========================================================= */
 
-#richiedi-lezione {
-    display: flex;
-    flex-direction: column;
-}
-
-#richiedi-lezione > p {
-    max-width: 500px;
-
-    color: var(--text-soft);
-
-    text-align: left;
-}
-
 .form-card {
     width: 100%;
-
-    margin-top: 5px;
-
-    padding: 0;
 }
+
 
 #form-richiesta {
     width: 100%;
 }
+
 
 #form-richiesta label {
     display: block;
 
     margin: 0 0 7px;
 
-    color: #334155;
+    color: #344054;
 
-    font-size: 12px;
+    font-size: 11px;
+
     font-weight: 800;
 }
+
 
 #form-richiesta input,
 #form-richiesta select,
 #form-richiesta textarea {
     width: 100%;
-
-    margin-bottom: 17px;
-
-    padding: 12px 14px;
 
     background: #f8fafc;
 
@@ -958,60 +1144,84 @@ section > p {
 
     color: var(--text);
 
-    font-size: 13px;
-
     outline: none;
 
+    font-size: 13px;
+
     transition:
-        background 0.2s ease,
         border-color 0.2s ease,
+        background 0.2s ease,
         box-shadow 0.2s ease;
 }
+
 
 #form-richiesta input,
 #form-richiesta select {
     height: 45px;
+
+    padding: 0 13px;
+
+    margin-bottom: 17px;
 }
 
+
 #form-richiesta textarea {
-    min-height: 105px;
+    min-height: 100px;
+
+    padding: 12px 13px;
+
+    margin-bottom: 18px;
 
     resize: vertical;
 }
+
 
 #form-richiesta input:focus,
 #form-richiesta select:focus,
 #form-richiesta textarea:focus {
     background: white;
 
-    border-color: #7ea4ee;
+    border-color: #83a6e9;
 
     box-shadow:
-        0 0 0 4px rgba(37, 99, 235, 0.08);
+        0 0 0 4px rgba(37,99,235,0.08);
 }
+
+
+#form-richiesta input::placeholder,
+#form-richiesta textarea::placeholder {
+    color: #a0a9b7;
+}
+
+
+/* bottone */
 
 #inviaBtn {
     width: 100%;
 
     min-height: 50px;
 
-    margin-top: 2px;
+    padding: 0 20px;
 
-    border: none;
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #1d4ed8
+        );
 
     border-radius: 12px;
-
-    background: var(--blue);
 
     color: white;
 
     font-size: 13px;
+
     font-weight: 850;
 
     cursor: pointer;
 
     box-shadow:
-        0 10px 25px rgba(37,99,235,0.20);
+        0 11px 25px rgba(37,99,235,0.22);
 
     transition:
         transform 0.2s ease,
@@ -1019,12 +1229,19 @@ section > p {
         opacity 0.2s ease;
 }
 
+
 #inviaBtn:hover {
     transform: translateY(-2px);
 
     box-shadow:
-        0 15px 30px rgba(37,99,235,0.28);
+        0 16px 32px rgba(37,99,235,0.28);
 }
+
+
+#inviaBtn:active {
+    transform: translateY(0);
+}
+
 
 #inviaBtn:disabled {
     opacity: 0.65;
@@ -1034,17 +1251,34 @@ section > p {
     transform: none;
 }
 
+
+/* messaggio risultato */
+
 #risultato {
-    min-height: 22px;
+    min-height: 20px;
 
     margin-top: 14px;
 
     color: var(--green);
 
     font-size: 12px;
+
     font-weight: 750;
 
+    line-height: 1.5;
+
     text-align: center;
+}
+
+
+#risultato.successo {
+    padding: 11px 12px;
+
+    background: #ecfdf3;
+
+    border: 1px solid #c9f2dc;
+
+    border-radius: 10px;
 }
 
 
@@ -1053,18 +1287,18 @@ section > p {
    ========================================================= */
 
 #prezzi {
-    width: min(1100px, calc(100% - 40px));
+    width: min(1000px, calc(100% - 40px));
 
-    margin-top: 40px;
-
-    padding: 100px 40px;
+    padding: 100px 20px;
 
     text-align: center;
 }
 
+
 #prezzi h2 {
-    margin-bottom: 45px;
+    margin-bottom: 40px;
 }
+
 
 .prezzo-card {
     position: relative;
@@ -1073,39 +1307,46 @@ section > p {
 
     margin: auto;
 
-    padding: 48px 30px;
+    padding: 50px 30px;
 
     overflow: hidden;
 
     background:
+        radial-gradient(
+            circle at 90% 10%,
+            rgba(37,99,235,0.14),
+            transparent 32%
+        ),
         linear-gradient(
             135deg,
-            #ffffff,
+            white,
             #eef4ff
         );
 
-    border: 1px solid #dbe7fb;
+    border: 1px solid #dce6f7;
 
     border-radius: 28px;
 
-    box-shadow: var(--shadow);
+    box-shadow: var(--shadow-lg);
 }
+
 
 .prezzo-card::before {
     content: "";
 
     position: absolute;
 
-    width: 190px;
-    height: 190px;
+    width: 180px;
+    height: 180px;
 
-    top: -100px;
-    right: -60px;
+    left: -90px;
+    bottom: -110px;
 
-    background: #dce9ff;
+    background: #e1ebff;
 
     border-radius: 50%;
 }
+
 
 .prezzo {
     position: relative;
@@ -1113,11 +1354,11 @@ section > p {
 
     color: var(--blue-deep);
 
-    font-size: clamp(60px, 9vw, 90px);
+    font-size: clamp(65px, 10vw, 95px);
 
     line-height: 1;
 
-    letter-spacing: -0.06em;
+    letter-spacing: -0.07em;
 
     font-weight: 900;
 }
@@ -1128,11 +1369,11 @@ section > p {
    ========================================================= */
 
 #come-contattarmi {
-    width: min(1100px, calc(100% - 40px));
+    width: min(1000px, calc(100% - 40px));
 
-    margin-bottom: 50px;
+    margin-bottom: 55px;
 
-    padding: 65px 40px;
+    padding: 70px 30px;
 
     background: white;
 
@@ -1140,14 +1381,16 @@ section > p {
 
     border-radius: 28px;
 
-    box-shadow: var(--shadow-small);
+    box-shadow: var(--shadow);
 
     text-align: center;
 }
 
+
 #come-contattarmi h2 {
-    margin-bottom: 18px;
+    margin-bottom: 25px;
 }
+
 
 #come-contattarmi a {
     display: inline-flex;
@@ -1157,32 +1400,32 @@ section > p {
 
     min-height: 50px;
 
-    margin-top: 10px;
-
-    padding: 0 24px;
+    padding: 0 25px;
 
     background: var(--blue);
 
-    color: white;
-
     border-radius: 12px;
 
+    color: white;
+
     font-size: 13px;
+
     font-weight: 850;
 
     box-shadow:
-        0 10px 25px rgba(37,99,235,0.20);
+        0 11px 25px rgba(37,99,235,0.22);
 
     transition:
         transform 0.2s ease,
         box-shadow 0.2s ease;
 }
 
+
 #come-contattarmi a:hover {
     transform: translateY(-2px);
 
     box-shadow:
-        0 15px 30px rgba(37,99,235,0.28);
+        0 16px 32px rgba(37,99,235,0.28);
 }
 
 
@@ -1191,14 +1434,15 @@ section > p {
    ========================================================= */
 
 footer {
-    padding: 28px 20px;
+    padding: 30px 20px;
 
-    background: #09152f;
+    background: #08142e;
 
-    color: #71809b;
+    color: #8290a9;
 
     text-align: center;
 }
+
 
 footer p {
     font-size: 11px;
@@ -1211,27 +1455,50 @@ footer p {
 
 @media (prefers-reduced-motion: no-preference) {
 
-    #cosa-faccio,
-    .card,
-    .passaggi li,
-    .prenotazione-layout section,
-    .prezzo-card,
-    #come-contattarmi {
-        animation:
-            fadeUp 0.7s ease both;
+    #cosa-faccio {
+        animation: fadeUp 0.7s ease both;
+    }
+
+    .card {
+        animation: fadeUp 0.6s ease both;
+    }
+
+    .card:nth-child(2) {
+        animation-delay: 0.05s;
+    }
+
+    .card:nth-child(3) {
+        animation-delay: 0.10s;
+    }
+
+    .card:nth-child(4) {
+        animation-delay: 0.15s;
+    }
+
+    .card:nth-child(5) {
+        animation-delay: 0.20s;
+    }
+
+    .card:nth-child(6) {
+        animation-delay: 0.25s;
     }
 }
+
 
 @keyframes fadeUp {
 
     from {
         opacity: 0;
-        transform: translateY(18px);
+
+        transform:
+            translateY(18px);
     }
 
     to {
         opacity: 1;
-        transform: translateY(0);
+
+        transform:
+            translateY(0);
     }
 }
 
@@ -1240,24 +1507,25 @@ footer p {
    TABLET
    ========================================================= */
 
-@media (max-width: 950px) {
+@media (max-width: 900px) {
 
-    nav {
-        gap: 20px;
+    header {
+        min-height: 500px;
+
+        padding: 85px 20px 75px;
     }
 
-    nav a {
-        font-size: 13px;
-    }
 
     .cards {
         grid-template-columns:
             repeat(2, minmax(0, 1fr));
     }
 
+
     .prenotazione-layout {
         grid-template-columns: 1fr;
     }
+
 
     .passaggi::before {
         left: 16%;
@@ -1270,19 +1538,26 @@ footer p {
    MOBILE
    ========================================================= */
 
-@media (max-width: 700px) {
+@media (max-width: 650px) {
 
     header {
-        padding: 75px 18px 65px;
+        min-height: 470px;
+
+        padding: 75px 17px 65px;
     }
+
 
     header h1 {
-        font-size: clamp(48px, 15vw, 72px);
+        font-size: clamp(50px, 15vw, 75px);
     }
 
+
     .sottotitolo {
+        margin-top: 22px;
+
         font-size: 16px;
     }
+
 
     nav {
         position: relative;
@@ -1293,16 +1568,19 @@ footer p {
 
         gap: 8px 18px;
 
-        padding: 15px 14px;
+        padding: 15px 12px;
     }
 
+
     nav a {
-        font-size: 12px;
+        font-size: 11px;
     }
+
 
     nav a::after {
         display: none;
     }
+
 
     section {
         width: calc(100% - 28px);
@@ -1310,9 +1588,16 @@ footer p {
         padding: 65px 0;
     }
 
+
     section h2 {
-        font-size: 40px;
+        font-size: 39px;
     }
+
+
+    section > p {
+        font-size: 14px;
+    }
+
 
     #cosa-faccio {
         width: calc(100% - 28px);
@@ -1321,27 +1606,36 @@ footer p {
 
         padding: 65px 22px;
 
-        border-radius: 24px;
+        border-radius: 25px;
     }
+
 
     #cosa-faccio h2 {
         font-size: 42px;
     }
 
+
     #cosa-faccio p {
         font-size: 15px;
     }
 
-    #materie h2,
-    #come-funziona h2 {
-        margin-bottom: 38px;
+
+    #materie {
+        padding-top: 75px;
     }
+
+
+    #materie h2 {
+        margin-bottom: 35px;
+    }
+
 
     .cards {
         grid-template-columns: 1fr;
 
-        gap: 15px;
+        gap: 14px;
     }
+
 
     .card {
         min-height: 210px;
@@ -1349,67 +1643,79 @@ footer p {
         padding: 27px;
     }
 
+
     .passaggi::before {
         display: none;
     }
 
+
     .passaggi ol {
         grid-template-columns: 1fr;
 
-        gap: 18px;
+        gap: 22px;
     }
+
 
     .passaggi li {
-        padding: 10px 15px 25px;
+        padding-bottom: 12px;
     }
+
 
     .passaggi li span {
-        margin-bottom: 17px;
+        margin-bottom: 16px;
     }
 
-    .passaggi li::after {
-        margin-top: 13px;
-    }
 
     .prenotazione-layout {
         width: calc(100% - 28px);
 
-        gap: 15px;
-
         margin-bottom: 45px;
     }
 
-    .prenotazione-layout section {
-        padding: 24px 17px;
+
+    #disponibilita,
+    #richiedi-lezione {
+        padding: 23px 15px;
 
         border-radius: 21px;
     }
 
-    .prenotazione-layout section h2 {
-        font-size: 32px;
+
+    #disponibilita h2,
+    #richiedi-lezione h2 {
+        font-size: 31px;
     }
 
+
     #meseAnno {
-        font-size: 21px;
+        font-size: 20px;
+
+        margin-top: 25px;
     }
+
 
     #calendario {
         gap: 5px !important;
     }
 
-    #calendario > div {
-        height: 27px;
 
-        font-size: 8px;
+    #calendario > div {
+        height: 26px;
+
+        font-size: 7px;
+
+        letter-spacing: 0;
     }
 
+
     #calendario > button {
-        height: 39px;
+        height: 38px;
 
         border-radius: 9px;
 
-        font-size: 12px;
+        font-size: 11px;
     }
+
 
     #orari {
         grid-template-columns:
@@ -1418,11 +1724,13 @@ footer p {
         gap: 7px;
     }
 
+
     #orari button {
         min-height: 42px;
 
         font-size: 11px;
     }
+
 
     #prezzi {
         width: calc(100% - 28px);
@@ -1430,19 +1738,18 @@ footer p {
         padding: 65px 15px;
     }
 
-    #prezzi h2 {
-        margin-bottom: 32px;
-    }
 
     .prezzo-card {
-        padding: 38px 20px;
+        padding: 40px 20px;
 
-        border-radius: 23px;
+        border-radius: 24px;
     }
+
 
     .prezzo {
         font-size: 65px;
     }
+
 
     #come-contattarmi {
         width: calc(100% - 28px);
@@ -1455,67 +1762,79 @@ footer p {
 
 
 /* =========================================================
-   MOBILE PICCOLO
+   TELEFONI PICCOLI
    ========================================================= */
 
-@media (max-width: 430px) {
+@media (max-width: 400px) {
 
     header {
-        padding: 65px 15px 55px;
+        min-height: 430px;
+
+        padding-top: 65px;
     }
+
 
     header h1 {
-        font-size: 49px;
+        font-size: 48px;
     }
+
 
     nav {
-        gap: 7px 13px;
+        gap: 7px 12px;
     }
+
 
     nav a {
-        font-size: 11px;
+        font-size: 10px;
     }
+
 
     #cosa-faccio h2 {
-        font-size: 37px;
-    }
-
-    section h2 {
         font-size: 36px;
     }
+
+
+    section h2 {
+        font-size: 35px;
+    }
+
 
     .card {
         padding: 24px;
     }
 
-    .prenotazione-layout section {
-        padding: 22px 13px;
+
+    #disponibilita,
+    #richiedi-lezione {
+        padding: 21px 12px;
     }
 
-    .prenotazione-layout section h2 {
-        font-size: 29px;
-    }
 
     #calendario {
         gap: 4px !important;
     }
 
+
     #calendario > div {
-        font-size: 7px;
+        font-size: 6.5px;
     }
 
+
     #calendario > button {
-        height: 36px;
+        height: 35px;
 
         border-radius: 8px;
 
-        font-size: 11px;
+        font-size: 10px;
     }
+
 
     #orari button {
         font-size: 10px;
-        padding: 8px 5px;
+
+        padding: 7px 3px;
     }
+
 
     .prezzo {
         font-size: 58px;
@@ -1528,6 +1847,7 @@ footer p {
    ========================================================= */
 
 ::selection {
-    background: #bcd2ff;
-    color: #0d1b3e;
+    background: #c9dcff;
+
+    color: #0b1735;
 }
