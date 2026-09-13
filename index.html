@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ripetizioni</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header>
+
+        <h1>Ripetizioni</h1>
+
+        <p class="sottotitolo">
+            Impara, capisci, migliora.
+        </p>
+
+    </header>
+
+
+    <!-- =========================
+         NAVIGAZIONE
+    ========================== -->
+
+    <nav>
+
+        <a href="#materie">
+            Materie
+        </a>
+
+        <a href="#come-funziona">
+            Come funziona
+        </a>
+
+        <a href="#prezzi">
+            Prezzi
+        </a>
+
+        <a href="#prenota">
+            Prenota
+        </a>
+
+        <a href="#come-contattarmi">
+            Contatti
+        </a>
+
+    </nav>
+
+
+    <main>
+
+
+        <!-- =========================
+             INTRODUZIONE
+        ========================== -->
+
+        <section id="cosa-faccio">
+
+            <h2>
+                Ripetizioni personalizzate
+            </h2>
+
+            <p>
+                Ti aiuto a capire gli argomenti,
+                svolgere gli esercizi e prepararti
+                per le verifiche.
+            </p>
+
+            <a href="#prezzi">
+                Vedi i prezzi
+            </a>
+
+        </section>
+
+
+
+        <!-- =========================
+             MATERIE
+        ========================== -->
+
+        <section id="materie">
+
+            <h2>
+                Materie
+            </h2>
+
+            <div class="cards">
+
+
+                <div class="card">
+
+                    <h3>
+                        Matematica
+                    </h3>
+
+                    <p>
+                        Aiuto con esercizi,
+                        spiegazione degli argomenti
+                        e preparazione alle verifiche.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3>
+                        Italiano
+                    </h3>
+
+                    <p>
+                        Aiuto con grammatica,
+                        comprensione del testo
+                        e analisi.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3>
+                        Scienze
+                    </h3>
+
+                    <p>
+                        Aiuto nella comprensione
+                        degli argomenti e nella
+                        preparazione alle verifiche.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3>
+                        Storia-Geografia
+                    </h3>
+
+                    <p>
+                        Aiuto nello studio,
+                        nella comprensione degli
+                        argomenti e nel ripasso.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3>
+                        Filosofia
+                    </h3>
+
+                    <p>
+                        Aiuto nella comprensione
+                        degli autori, delle idee
+                        e dei principali concetti.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3>
+                        Fisica
+                    </h3>
+
+                    <p>
+                        Aiuto nella comprensione
+                        della teoria e nello
+                        svolgimento degli esercizi.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             COME FUNZIONA
+        ========================== -->
+
+        <section id="come-funziona">
+
+            <h2>
+                Come funziona
+            </h2>
+
+            <div class="passaggi">
+
+                <ol>
+
+                    <li>
+                        <span>1</span>
+                        Mi contatti.
+                    </li>
+
+                    <li>
+                        <span>2</span>
+                        Scegliamo giorno e orario.
+                    </li>
+
+                    <li>
+                        <span>3</span>
+                        Facciamo la lezione.
+                    </li>
+
+                </ol>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             PRENOTAZIONE
+        ========================== -->
+
+        <div
+            class="prenotazione-layout"
+            id="prenota"
+        >
+
+
+            <!-- CALENDARIO -->
+
+            <section id="disponibilita">
+
+                <h2>
+                    Disponibilità
+                </h2>
+
+                <h3 id="meseAnno"></h3>
+
+                <div id="calendario"></div>
+
+                <div id="orari"></div>
+
+            </section>
+
+
+
+            <!-- FORM -->
+
+            <section id="richiedi-lezione">
+
+                <h2>
+                    Richiedi una lezione
+                </h2>
+
+                <p>
+                    Compila il modulo per chiedere
+                    informazioni o una lezione.
+                </p>
+
+
+                <div class="form-card">
+
+                    <form id="form-richiesta">
+
+
+                        <label for="nome">
+                            Nome
+                        </label>
+
+                        <input
+                            type="text"
+                            id="nome"
+                            required
+                        >
+
+
+
+                        <label for="materia">
+                            Materia
+                        </label>
+
+                        <select
+                            id="materia"
+                            required
+                        >
+
+                            <option value="">
+                                Scegli una materia
+                            </option>
+
+                            <option value="Matematica">
+                                Matematica
+                            </option>
+
+                            <option value="Italiano">
+                                Italiano
+                            </option>
+
+                            <option value="Scienze">
+                                Scienze
+                            </option>
+
+                            <option value="Storia-Geografia">
+                                Storia-Geografia
+                            </option>
+
+                            <option value="Filosofia">
+                                Filosofia
+                            </option>
+
+                            <option value="Fisica">
+                                Fisica
+                            </option>
+
+                        </select>
+
+
+
+                        <label for="data">
+                            Data
+                        </label>
+
+                        <input
+                            type="date"
+                            id="data"
+                            required
+                        >
+
+
+
+                        <label for="ora">
+                            Orario
+                        </label>
+
+                        <input
+                            type="time"
+                            id="ora"
+                            required
+                        >
+
+
+
+                        <label for="messaggio">
+                            Messaggio
+                        </label>
+
+                        <textarea
+                            id="messaggio"
+                            placeholder="Scrivi qui eventuali informazioni..."
+                        ></textarea>
+
+
+
+                        <button
+                            type="submit"
+                            id="inviaBtn"
+                        >
+                            Invia richiesta
+                        </button>
+
+
+                        <p id="risultato"></p>
+
+                    </form>
+
+                </div>
+
+            </section>
+
+        </div>
+
+
+
+        <!-- =========================
+             PREZZI
+        ========================== -->
+
+        <section id="prezzi">
+
+            <h2>
+                Prezzi
+            </h2>
+
+            <div class="prezzo-card">
+
+                <p class="prezzo">
+                    10€/h
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             CONTATTI
+        ========================== -->
+
+        <section id="come-contattarmi">
+
+            <h2>
+                Contatti
+            </h2>
+
+            <a href="mailto:guerini16marco@gmail.com">
+                Contattami
+            </a>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <p>
+            © 2026 Ripetizioni
+        </p>
+
+    </footer>
+
+
+
+    <!-- SUPABASE -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <!-- JAVASCRIPT -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

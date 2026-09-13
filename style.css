@@ -1,0 +1,789 @@
+/* ========================================
+   COLORI
+======================================== */
+
+:root {
+
+    --blu: #2563eb;
+
+    --blu-scuro: #1e3a8a;
+
+    --blu-molto-scuro: #172554;
+
+    --sfondo: #eef4ff;
+
+    --bianco: #ffffff;
+
+    --testo: #1e293b;
+
+    --bordo: #dbeafe;
+
+    --successo: #166534;
+
+    --sfondo-successo: #dcfce7;
+
+}
+
+
+/* ========================================
+   GENERALE
+======================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    margin: 0;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background-color: var(--sfondo);
+
+    color: var(--testo);
+
+    line-height: 1.6;
+}
+
+
+main {
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 25px;
+}
+
+
+section {
+
+    background-color: var(--bianco);
+
+    padding: 30px;
+
+    margin-bottom: 30px;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 4px 12px #d1d5db;
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+header {
+
+    text-align: center;
+
+    padding: 60px 20px;
+
+    background-color: var(--blu-scuro);
+
+    color: white;
+}
+
+
+h1 {
+
+    margin: 0;
+
+    font-size: 48px;
+}
+
+
+.sottotitolo {
+
+    margin-top: 10px;
+
+    font-size: 20px;
+}
+
+
+/* ========================================
+   NAV
+======================================== */
+
+nav {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 25px;
+
+    padding: 15px;
+
+    background-color: white;
+
+    box-shadow:
+        0 2px 8px #d1d5db;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 10;
+}
+
+
+nav a {
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    color: var(--blu-scuro);
+
+    transition: 0.2s;
+}
+
+
+nav a:hover {
+
+    color: var(--blu);
+}
+
+
+/* ========================================
+   TITOLI
+======================================== */
+
+h2 {
+
+    color: var(--blu-scuro);
+
+    margin-top: 0;
+}
+
+
+h3 {
+
+    color: var(--blu);
+}
+
+
+/* ========================================
+   INTRODUZIONE
+======================================== */
+
+#cosa-faccio a {
+
+    display: inline-block;
+
+    margin-top: 10px;
+
+    padding: 12px 20px;
+
+    background-color: var(--blu);
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 8px;
+
+    font-weight: bold;
+}
+
+
+#cosa-faccio a:hover {
+
+    background-color: var(--blu-scuro);
+}
+
+
+/* ========================================
+   CARD MATERIE
+======================================== */
+
+.cards {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+
+.card {
+
+    padding: 25px;
+
+    border: 1px solid var(--bordo);
+
+    border-radius: 12px;
+
+    text-align: center;
+
+    background-color: white;
+
+    box-shadow:
+        0 4px 12px #d1d5db;
+
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s;
+}
+
+
+.card:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 8px 18px #cbd5e1;
+}
+
+
+.card h3 {
+
+    margin-top: 0;
+
+    font-size: 22px;
+}
+
+
+.card p {
+
+    margin-bottom: 0;
+}
+
+
+/* ========================================
+   COME FUNZIONA
+======================================== */
+
+.passaggi {
+
+    background-color: white;
+
+    padding: 25px;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 4px 12px #d1d5db;
+}
+
+
+.passaggi ol {
+
+    list-style: none;
+
+    padding: 0;
+
+    margin: 0;
+}
+
+
+.passaggi li {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 15px;
+
+    padding: 12px;
+
+    border-radius: 8px;
+}
+
+
+.passaggi li:last-child {
+
+    margin-bottom: 0;
+}
+
+
+.passaggi li:hover {
+
+    background-color: var(--sfondo);
+}
+
+
+.passaggi span {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 32px;
+
+    height: 32px;
+
+    border-radius: 50%;
+
+    background-color: var(--blu);
+
+    color: white;
+
+    font-weight: bold;
+}
+
+
+/* ========================================
+   PRENOTAZIONE
+======================================== */
+
+.prenotazione-layout {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 30px;
+
+    align-items: start;
+}
+
+
+.prenotazione-layout > section {
+
+    min-width: 0;
+}
+
+
+/* ========================================
+   CALENDARIO
+======================================== */
+
+#disponibilita {
+
+    background-color: white;
+
+    padding: 30px;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 4px 12px #d1d5db;
+}
+
+
+#meseAnno {
+
+    text-align: center;
+
+    text-transform: capitalize;
+
+    color: var(--blu-scuro);
+
+    margin-bottom: 20px;
+}
+
+
+#calendario {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(7, 1fr);
+
+    gap: 8px;
+}
+
+
+#calendario > div {
+
+    text-align: center;
+
+    font-weight: bold;
+
+    color: var(--blu-scuro);
+
+    padding: 8px;
+}
+
+
+#calendario button {
+
+    padding: 12px 5px;
+
+    border: 1px solid #bfdbfe;
+
+    background-color: #eff6ff;
+
+    color: var(--blu-scuro);
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+    margin: 0;
+}
+
+
+#calendario button:hover {
+
+    background-color: #dbeafe;
+}
+
+
+#calendario button:disabled {
+
+    background-color: #f1f5f9;
+
+    color: #94a3b8;
+
+    cursor: not-allowed;
+
+    border-color: #e2e8f0;
+}
+
+
+#calendario button.selezionato {
+
+    background-color: var(--blu);
+
+    color: white;
+
+    border-color: var(--blu);
+}
+
+
+/* ========================================
+   ORARI
+======================================== */
+
+#orari {
+
+    margin-top: 25px;
+}
+
+
+#orari h3 {
+
+    color: var(--blu-scuro);
+}
+
+
+#orari button {
+
+    margin: 5px;
+
+    padding: 10px 16px;
+
+    border: 1px solid #93c5fd;
+
+    border-radius: 8px;
+
+    background-color: #eff6ff;
+
+    color: var(--blu-scuro);
+
+    cursor: pointer;
+}
+
+
+#orari button:hover {
+
+    background-color: #dbeafe;
+}
+
+
+#orari button.selezionato {
+
+    background-color: var(--blu);
+
+    color: white;
+}
+
+
+/* ========================================
+   FORM
+======================================== */
+
+.form-card {
+
+    background-color: white;
+
+    padding: 30px;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 4px 12px #d1d5db;
+}
+
+
+.form-card form {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+
+.form-card label {
+
+    font-weight: bold;
+
+    margin-top: 8px;
+}
+
+
+input,
+select,
+textarea {
+
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 7px;
+
+    font-size: 16px;
+
+    font-family: inherit;
+}
+
+
+textarea {
+
+    min-height: 120px;
+
+    resize: vertical;
+}
+
+
+input:focus,
+select:focus,
+textarea:focus {
+
+    outline: none;
+
+    border-color: var(--blu);
+}
+
+
+.form-card button {
+
+    align-self: flex-start;
+
+    margin-top: 15px;
+
+    padding: 11px 20px;
+
+    background-color: var(--blu);
+
+    color: white;
+
+    border: none;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-size: 16px;
+}
+
+
+.form-card button:hover {
+
+    background-color: var(--blu-scuro);
+}
+
+
+/* ========================================
+   MESSAGGIO SUCCESSO
+======================================== */
+
+#risultato {
+
+    margin-top: 15px;
+}
+
+
+.successo {
+
+    background-color: var(--sfondo-successo);
+
+    color: var(--successo);
+
+    padding: 12px;
+
+    border-radius: 8px;
+
+    font-weight: bold;
+}
+
+
+/* ========================================
+   PREZZO
+======================================== */
+
+.prezzo-card {
+
+    background-color: white;
+
+    padding: 30px;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 4px 12px #d1d5db;
+
+    text-align: center;
+}
+
+
+.prezzo {
+
+    font-size: 32px;
+
+    font-weight: bold;
+
+    color: var(--blu);
+}
+
+
+/* ========================================
+   CONTATTI
+======================================== */
+
+#come-contattarmi a {
+
+    display: inline-block;
+
+    padding: 12px 20px;
+
+    background-color: var(--blu);
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 8px;
+
+    font-weight: bold;
+}
+
+
+#come-contattarmi a:hover {
+
+    background-color: var(--blu-scuro);
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+footer {
+
+    text-align: center;
+
+    padding: 25px;
+
+    background-color: var(--blu-scuro);
+
+    color: white;
+
+    margin-top: 30px;
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 800px) {
+
+    h1 {
+
+        font-size: 38px;
+    }
+
+
+    .cards {
+
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+    .prenotazione-layout {
+
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 550px) {
+
+    main {
+
+        padding: 15px;
+    }
+
+
+    section {
+
+        padding: 20px;
+    }
+
+
+    nav {
+
+        gap: 12px;
+    }
+
+
+    nav a {
+
+        font-size: 14px;
+    }
+
+
+    .cards {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    #calendario {
+
+        gap: 4px;
+    }
+
+
+    #calendario button {
+
+        padding: 10px 3px;
+
+        font-size: 14px;
+    }
+
+}
