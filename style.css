@@ -2349,3 +2349,196 @@ textarea {
     background: #bcd2ff;
     color: #0d1b3e;
 }
+/* ========================================
+   ULTIME RIFINITURE
+   ======================================== */
+
+/* SOTTOTITOLI CENTRATI */
+.sottotitolo {
+    text-align: center;
+}
+
+section > p {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 25px;
+}
+
+/* ========================================
+   CALENDARIO MODERNO
+   ======================================== */
+
+#disponibilita {
+    overflow: hidden;
+}
+
+#meseAnno {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 5px 0 25px;
+}
+
+/* Griglia del calendario */
+#calendario {
+    display: grid !important;
+    grid-template-columns: repeat(7, minmax(0, 1fr)) !important;
+    gap: 7px !important;
+    width: 100%;
+    max-width: 520px;
+    margin: 0 auto;
+}
+
+/* Giorni della settimana: Lun Mar Mer... */
+#calendario > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 0;
+    height: 32px;
+
+    padding: 0 !important;
+
+    color: #64748b;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* Spazi vuoti prima del primo giorno */
+#calendario > div:empty {
+    visibility: hidden;
+}
+
+/* Numeri dei giorni */
+#calendario button {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+
+    min-height: 42px;
+    padding: 0 !important;
+    margin: 0 !important;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #dbeafe;
+    border-radius: 12px;
+
+    background: #f8fbff;
+    color: #1e3a8a;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.15s ease,
+        background-color 0.15s ease,
+        border-color 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+/* Giorno selezionabile */
+#calendario button:not(:disabled):hover {
+    transform: translateY(-2px);
+    background: #eff6ff;
+    border-color: #93c5fd;
+
+    box-shadow: 0 5px 12px rgba(37, 99, 235, 0.12);
+}
+
+/* Giorni non disponibili / passati */
+#calendario button:disabled {
+    background: #f1f5f9;
+    border-color: #e2e8f0;
+    color: #cbd5e1;
+
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* Giorno selezionato */
+#calendario button.selezionato {
+    background: #2563eb;
+    border-color: #2563eb;
+    color: white;
+
+    box-shadow: 0 6px 15px rgba(37, 99, 235, 0.25);
+}
+
+/* ========================================
+   ORARI
+   ======================================== */
+
+#orari {
+    margin-top: 28px;
+    text-align: center;
+}
+
+#orari h3 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+#orari button {
+    margin: 5px;
+    padding: 11px 17px;
+
+    border: 1px solid #bfdbfe;
+    border-radius: 10px;
+
+    background: #eff6ff;
+    color: #1e3a8a;
+
+    font-weight: 600;
+    cursor: pointer;
+
+    transition: 0.15s ease;
+}
+
+#orari button:hover {
+    transform: translateY(-2px);
+    background: #dbeafe;
+    border-color: #93c5fd;
+}
+
+#orari button.selezionato {
+    background: #2563eb;
+    color: white;
+    border-color: #2563eb;
+}
+
+/* ========================================
+   MOBILE
+   ======================================== */
+
+@media (max-width: 550px) {
+
+    #calendario {
+        gap: 5px !important;
+    }
+
+    #calendario > div {
+        font-size: 10px;
+        height: 28px;
+    }
+
+    #calendario button {
+        min-height: 38px;
+        border-radius: 9px;
+        font-size: 13px;
+    }
+
+    #meseAnno {
+        font-size: 21px;
+    }
+
+    #orari button {
+        padding: 10px 13px;
+        margin: 4px;
+    }
+}
